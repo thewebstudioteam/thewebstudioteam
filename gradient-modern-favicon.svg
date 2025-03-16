@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Modern geometric favicon with black-gray gradient background -->
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="100%" stop-color="#333333" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circular background with gradient -->
+  <circle cx="16" cy="16" r="16" fill="url(#backgroundGradient)"/>
+  
+  <!-- Sharp geometric code brackets -->
+  <polygon points="9,10 4,16 9,22 11,22 6,16 11,10" fill="white"/>
+  <polygon points="23,10 28,16 23,22 21,22 26,16 21,10" fill="white"/>
+  <polygon points="13,8 15,8 19,24 17,24" fill="white"/>
+</svg>

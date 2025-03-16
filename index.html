@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>THE WEB </> STUDIO - Front-End Web Design</title>
+    <title>THE WEB </> STUDIO - Digital Design</title>
+    <link rel="icon" type="image/svg+xml" href="radient-modern-favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -168,10 +169,34 @@
         height: 100vh;
         display: flex;
         align-items: center;
-        background-color: var(--off-white);
         margin-top: var(--header-height);
         position: relative;
         overflow: hidden;
+      }
+
+      .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("esteban-amaro-Nw7PGwoprmY-unsplash-fotor-20250316231858.png"); /* Update with correct path to Estaban image */
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-background::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero .container {
+        position: relative;
+        z-index: 2;
       }
 
       .hero:before {
@@ -181,16 +206,39 @@
         height: 100%;
         background: linear-gradient(
           135deg,
-          rgba(248, 248, 248, 0.9) 0%,
-          rgba(248, 248, 248, 0.7) 100%
+          rgba(0, 0, 0, 0.4) 0%,
+          rgba(0, 0, 0, 0.3) 100%
         );
         z-index: 1;
       }
 
       .hero-content {
-        position: relative;
-        z-index: 2;
         max-width: 600px;
+        color: white;
+        padding: 40px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      .hero p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.15rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+      }
+
+      .hero .btn {
+        background-color: white;
+        color: #202020;
+        border: none;
+      }
+
+      .hero .btn:hover {
+        color: #202020;
       }
 
       .hero-image {
@@ -202,6 +250,17 @@
         background-image: url("/api/placeholder/800/600");
         background-size: cover;
         background-position: center;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content {
+          padding: 30px 25px;
+          margin: 0 15px;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
       }
 
       /* About Section */
@@ -733,8 +792,9 @@
 
     <!-- Hero Section -->
     <section class="hero">
+      <div class="hero-background"></div>
       <div class="container">
-        <div class="hero-content">
+        <div class="hero-content animate-in">
           <h1>Front-End Web Excellence</h1>
           <p>
             We specialize in creating beautiful, responsive, and user-friendly
@@ -743,7 +803,6 @@
           <a href="#services" class="btn">View Our Services</a>
         </div>
       </div>
-      <div class="hero-image"></div>
     </section>
 
     <!-- About Section -->
@@ -778,103 +837,134 @@
           <div>
             <h2>Our Services</h2>
             <p>
-              Discover excellence in front-end web design with our bespoke
-              services. Our team brings unmatched expertise and precision to
-              every project, ensuring beautiful, responsive solutions that meet
-              your unique needs.
+              We offer affordable, quality front-end web design services for
+              individuals and small businesses. Our focus is on creating clean,
+              professional designs that help you establish a strong online
+              presence.
             </p>
 
             <div class="service-accordion">
               <div class="accordion-item">
                 <div class="accordion-header" onclick="toggleAccordion(0)">
-                  <h3>Static Website Design</h3>
+                  <h3>Website Design</h3>
                   <div class="accordion-icon">+</div>
                 </div>
                 <div class="accordion-content">
                   <p>
-                    Perfect for small businesses or individuals looking for a
-                    professional online presence with a clean, modern design.
+                    Professional website design services to establish your
+                    online presence.
                   </p>
                   <ul>
-                    <li>Custom design based on your brand</li>
-                    <li>Fully responsive layout</li>
-                    <li>Cross-browser compatibility</li>
-                    <li>Contact form integration</li>
+                    <li>Simple Personal Website</li>
+                    <li>Portfolio Website</li>
+                    <li>Small Business Website</li>
+                    <li>Landing Page</li>
+                    <li>Mobile responsive design included</li>
                     <li>Social media integration</li>
-                    <li>Basic SEO optimization</li>
                   </ul>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <div class="accordion-header" onclick="toggleAccordion(1)">
-                  <h3>Front-End Web App</h3>
+                  <h3>Digital Advertisements</h3>
                   <div class="accordion-icon">+</div>
                 </div>
                 <div class="accordion-content">
                   <p>
-                    For businesses looking for interactive features and more
-                    complex front-end functionality.
+                    Eye-catching digital advertisements to promote your business
+                    online.
                   </p>
                   <ul>
-                    <li>Interactive user interface</li>
-                    <li>JavaScript animations and effects</li>
-                    <li>Advanced CSS styling</li>
-                    <li>Form validation and user feedback</li>
-                    <li>Image galleries and sliders</li>
-                    <li>
-                      Front-end framework implementation (React, Vue, etc.)
-                    </li>
+                    <li>Social Media Ads</li>
+                    <li>Web Banners</li>
+                    <li>Digital Flyers</li>
+                    <li>Custom graphics based on your brand</li>
+                    <li>Multiple format options available</li>
                   </ul>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <div class="accordion-header" onclick="toggleAccordion(2)">
-                  <h3>UI/UX Design</h3>
+                  <h3>Digital Brochures</h3>
                   <div class="accordion-icon">+</div>
                 </div>
                 <div class="accordion-content">
                   <p>
-                    Comprehensive user interface and experience design to ensure
-                    your website is not only beautiful but also intuitive and
-                    effective.
+                    Professional digital brochures to showcase your products or
+                    services.
                   </p>
                   <ul>
-                    <li>User research and personas</li>
-                    <li>Wireframing and prototyping</li>
-                    <li>Information architecture</li>
-                    <li>Interaction design</li>
-                    <li>Visual design</li>
-                    <li>Usability testing</li>
+                    <li>2-Page Brochures</li>
+                    <li>4-Page Brochures</li>
+                    <li>Custom layout design</li>
+                    <li>High-quality digital format</li>
+                    <li>Print-ready files</li>
                   </ul>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <div class="accordion-header" onclick="toggleAccordion(3)">
-                  <h3>Front-End Optimization</h3>
+                  <h3>CV/Resume Design</h3>
+                  <div class="accordion-icon">+</div>
+                </div>
+                <div class="accordion-content">
+                  <p>Stand out with a professionally designed CV/Resume.</p>
+                  <ul>
+                    <li>Basic CV Design</li>
+                    <li>Premium CV Design</li>
+                    <li>Clean, modern layouts</li>
+                    <li>ATS-friendly formats</li>
+                    <li>Digital file + print-ready version</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(4)">
+                  <h3>Social Media Branding</h3>
                   <div class="accordion-icon">+</div>
                 </div>
                 <div class="accordion-content">
                   <p>
-                    Improve the performance, accessibility, and user experience
-                    of your existing website.
+                    Establish a consistent brand presence across your social
+                    media platforms.
                   </p>
                   <ul>
-                    <li>Page speed optimization</li>
-                    <li>Responsive design improvements</li>
-                    <li>Code refactoring and cleanup</li>
-                    <li>Accessibility enhancements</li>
-                    <li>Cross-browser compatibility fixes</li>
-                    <li>Performance monitoring and reporting</li>
+                    <li>Profile images & cover photos</li>
+                    <li>Post templates & content graphics</li>
+                    <li>Story highlights covers</li>
+                    <li>Brand color palette & typography</li>
+                    <li>Content strategy guidelines</li>
                   </ul>
                 </div>
               </div>
             </div>
-
-            <a href="#pricing" class="btn" style="margin-top: 30px"
-              >View Pricing</a
+          </div>
+          <div
+            class="custom-services"
+            style="
+              margin-top: 50px;
+              text-align: center;
+              padding: 30px;
+              background-color: var(--off-white);
+              border-radius: 10px;
+            "
+          >
+            <h3>Don't See What You Need?</h3>
+            <p style="max-width: 800px; margin: 20px auto">
+              Every project is unique, and we're here to help bring your digital
+              vision to life. If you don't see exactly what you're looking for
+              in our standard packages, please get in touch. We're happy to
+              discuss your specific requirements and create a custom solution
+              tailored to your needs and budget. Our team is flexible and
+              creative – let's start a conversation about how we can help you
+              achieve your goals.
+            </p>
+            <a href="#contact" class="btn" style="margin-top: 10px"
+              >Discuss Your Project</a
             >
           </div>
 
@@ -925,54 +1015,119 @@
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
       <div class="container">
-        <h2>Our Pricing</h2>
+        <h2>Our Packages</h2>
         <p>
-          Transparent pricing for our front-end web development services with no
-          hidden costs.
+          We offer flexible, transparent pricing tailored to your specific
+          project needs. Contact us for a personalized quote.
         </p>
 
         <div class="pricing-grid">
           <div class="pricing-card">
-            <div class="pricing-tier">Basic</div>
-            <div class="pricing-price">R5,999 <span>once-off</span></div>
+            <div class="pricing-tier">Personal</div>
+            <div class="pricing-price">Starting at R2,000</div>
             <ul class="pricing-features">
-              <li>Up to 5 static pages</li>
-              <li>Responsive design</li>
-              <li>Contact form</li>
-              <li>Social media integration</li>
+              <li>3-5 page personal website</li>
+              <li>Mobile responsive design</li>
+              <li>Simple contact form</li>
+              <li>Social media links</li>
               <li>Basic SEO setup</li>
-              <li>Hosting: R99/month</li>
+              <li>Hosting available: R99/month</li>
             </ul>
             <a href="#contact" class="btn">Get Started</a>
           </div>
 
           <div class="pricing-card">
-            <div class="pricing-tier">Standard</div>
-            <div class="pricing-price">R9,999 <span>once-off</span></div>
+            <div class="pricing-tier">Portfolio</div>
+            <div class="pricing-price">Starting at R2,500</div>
             <ul class="pricing-features">
-              <li>Up to 10 pages</li>
-              <li>Advanced design elements</li>
-              <li>Interactive features</li>
-              <li>Image gallery</li>
+              <li>Professional portfolio layout</li>
+              <li>Project showcase gallery</li>
+              <li>About me/Skills section</li>
+              <li>Contact page with form</li>
+              <li>1 month support</li>
+              <li>Hosting available: R99/month</li>
+            </ul>
+            <a href="#contact" class="btn">Get Started</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-tier">Business</div>
+            <div class="pricing-price">Starting at R3,500</div>
+            <ul class="pricing-features">
+              <li>5-8 page business website</li>
+              <li>Professional design</li>
+              <li>Image gallery/slider</li>
+              <li>Contact form with validation</li>
               <li>3 months support</li>
-              <li>Hosting: R149/month</li>
+              <li>Hosting available: R149/month</li>
             </ul>
             <a href="#contact" class="btn">Get Started</a>
           </div>
+        </div>
 
-          <div class="pricing-card">
-            <div class="pricing-tier">Premium</div>
-            <div class="pricing-price">R14,999 <span>once-off</span></div>
-            <ul class="pricing-features">
-              <li>Up to 15 pages</li>
-              <li>Custom animations</li>
-              <li>Advanced interactive elements</li>
-              <li>Complete UI/UX design</li>
-              <li>6 months support</li>
-              <li>Hosting: R199/month</li>
-            </ul>
-            <a href="#contact" class="btn">Get Started</a>
+        <div style="margin-top: 50px">
+          <h3>Additional Services</h3>
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <div class="pricing-tier">Digital Ads</div>
+              <div class="pricing-price">Starting at R200</div>
+              <ul class="pricing-features">
+                <li>Social media ads</li>
+                <li>Web banners</li>
+                <li>Digital flyers</li>
+                <li>Multiple formats</li>
+              </ul>
+              <a href="#contact" class="btn">Inquire</a>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pricing-tier">Brochures</div>
+              <div class="pricing-price">Starting at R500</div>
+              <ul class="pricing-features">
+                <li>2-4 page designs</li>
+                <li>Custom layouts</li>
+                <li>Digital format</li>
+                <li>Print-ready files</li>
+              </ul>
+              <a href="#contact" class="btn">Inquire</a>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pricing-tier">CV Design</div>
+              <div class="pricing-price">Starting at R300</div>
+              <ul class="pricing-features">
+                <li>Professional layout</li>
+                <li>ATS-friendly format</li>
+                <li>Digital + print versions</li>
+                <li>1 revision included</li>
+              </ul>
+              <a href="#contact" class="btn">Inquire</a>
+            </div>
           </div>
+        </div>
+
+        <div
+          class="custom-services"
+          style="
+            margin-top: 50px;
+            text-align: center;
+            padding: 30px;
+            background-color: var(--off-white);
+            border-radius: 10px;
+          "
+        >
+          <h3>Don't See What You Need?</h3>
+          <p style="max-width: 800px; margin: 20px auto">
+            Every project is unique, and we're here to help bring your digital
+            vision to life. If you don't see exactly what you're looking for in
+            our standard packages, please get in touch. We're happy to discuss
+            your specific requirements and create a custom solution tailored to
+            your needs and budget. Our team is flexible and creative – let's
+            start a conversation about how we can help you achieve your goals.
+          </p>
+          <a href="#contact" class="btn" style="margin-top: 10px"
+            >Discuss Your Project</a
+          >
         </div>
 
         <div style="margin-top: 50px; text-align: center">
@@ -983,10 +1138,8 @@
           </p>
           <ul style="max-width: 600px; margin: 20px auto; text-align: left">
             <li>99.9% uptime guarantee</li>
-            <li>Fast SSD storage</li>
             <li>Free SSL certificate</li>
             <li>Email accounts</li>
-            <li>South African CDN for fast loading</li>
             <li>Monthly backups</li>
           </ul>
           <p style="font-style: italic; margin-top: 20px">
@@ -1024,10 +1177,33 @@
             </div>
           </div>
 
-          <form id="contactForm">
+          <form
+            id="contactForm"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+          >
+            <!-- Hidden fields for Web3Forms -->
+            <input
+              type="hidden"
+              name="access_key"
+              value="77bc30d3-5283-4c83-b67f-9c608b85b874"
+            />
+            <input type="hidden" name="from_name" id="from_name" />
+            <input type="hidden" name="email_subject" id="email_subject" />
+            <input type="hidden" name="project_details" id="project_details" />
+
+            <!-- Honeypot field to prevent spam -->
+            <input type="checkbox" name="botcheck" style="display: none" />
+
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" id="name" placeholder="John Doe" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                required
+              />
               <div class="form-error" id="nameError">
                 Please enter your name
               </div>
@@ -1038,6 +1214,7 @@
               <input
                 type="email"
                 id="email"
+                name="email"
                 placeholder="john@example.com"
                 required
               />
@@ -1050,6 +1227,7 @@
               <label for="project">Project Type</label>
               <select
                 id="project"
+                name="project"
                 required
                 style="
                   width: 100%;
@@ -1079,6 +1257,7 @@
               <label for="message">Tell us about your project</label>
               <textarea
                 id="message"
+                name="message"
                 placeholder="Describe your project goals and requirements..."
                 required
               ></textarea>
@@ -1134,88 +1313,173 @@
 
     <!-- JavaScript -->
     <script>
-      // Form validation
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add hidden input for Web3Forms access key if it doesn't exist
+        if (!document.querySelector('input[name="access_key"]')) {
+          const accessKeyInput = document.createElement("input");
+          accessKeyInput.type = "hidden";
+          accessKeyInput.name = "access_key";
+          accessKeyInput.value = "77bc30d3-5283-4c83-b67f-9c608b85b874";
+          document.getElementById("contactForm").appendChild(accessKeyInput);
+        }
 
-          let isValid = true;
+        // Add honeypot field to prevent spam
+        if (!document.querySelector('input[name="botcheck"]')) {
+          const honeypotInput = document.createElement("input");
+          honeypotInput.type = "checkbox";
+          honeypotInput.name = "botcheck";
+          honeypotInput.style.display = "none";
+          document.getElementById("contactForm").appendChild(honeypotInput);
+        }
 
-          // Name validation
-          const name = document.getElementById("name");
-          const nameError = document.getElementById("nameError");
-          if (name.value.trim() === "") {
-            nameError.style.display = "block";
-            name.style.borderColor = "#ff6b6b";
-            isValid = false;
-          } else {
-            nameError.style.display = "none";
-            name.style.borderColor = "rgba(255, 255, 255, 0.1)";
-          }
+        // Form validation
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
 
-          // Email validation
-          const email = document.getElementById("email");
-          const emailError = document.getElementById("emailError");
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailPattern.test(email.value)) {
-            emailError.style.display = "block";
-            email.style.borderColor = "#ff6b6b";
-            isValid = false;
-          } else {
-            emailError.style.display = "none";
-            email.style.borderColor = "rgba(255, 255, 255, 0.1)";
-          }
+            let isValid = true;
 
-          // Project validation
-          const project = document.getElementById("project");
-          const projectError = document.getElementById("projectError");
-          if (project.value === "" || project.value === null) {
-            projectError.style.display = "block";
-            project.style.borderColor = "#ff6b6b";
-            isValid = false;
-          } else {
-            projectError.style.display = "none";
-            project.style.borderColor = "rgba(255, 255, 255, 0.1)";
-          }
+            // Name validation
+            const name = document.getElementById("name");
+            const nameError = document.getElementById("nameError");
+            if (name.value.trim() === "") {
+              nameError.style.display = "block";
+              name.style.borderColor = "#ff6b6b";
+              isValid = false;
+            } else {
+              nameError.style.display = "none";
+              name.style.borderColor = "rgba(255, 255, 255, 0.1)";
+            }
 
-          // Message validation
-          const message = document.getElementById("message");
-          const messageError = document.getElementById("messageError");
-          if (message.value.trim() === "") {
-            messageError.style.display = "block";
-            message.style.borderColor = "#ff6b6b";
-            isValid = false;
-          } else {
-            messageError.style.display = "none";
-            message.style.borderColor = "rgba(255, 255, 255, 0.1)";
-          }
+            // Email validation
+            const email = document.getElementById("email");
+            const emailError = document.getElementById("emailError");
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value)) {
+              emailError.style.display = "block";
+              email.style.borderColor = "#ff6b6b";
+              isValid = false;
+            } else {
+              emailError.style.display = "none";
+              email.style.borderColor = "rgba(255, 255, 255, 0.1)";
+            }
 
-          // If valid, show success animation and reset form
-          if (isValid) {
-            const btn = this.querySelector("button");
-            const originalContent = btn.innerHTML;
+            // Project validation
+            const project = document.getElementById("project");
+            const projectError = document.getElementById("projectError");
+            if (project.value === "" || project.value === null) {
+              projectError.style.display = "block";
+              project.style.borderColor = "#ff6b6b";
+              isValid = false;
+            } else {
+              projectError.style.display = "none";
+              project.style.borderColor = "rgba(255, 255, 255, 0.1)";
+            }
 
-            // Change button to show success message
-            btn.innerHTML =
-              '<i class="fas fa-check" style="margin-right: 10px;"></i> Message Sent!';
-            btn.style.backgroundColor = "#4CAF50";
-            btn.style.color = "white";
+            // Message validation
+            const message = document.getElementById("message");
+            const messageError = document.getElementById("messageError");
+            if (message.value.trim() === "") {
+              messageError.style.display = "block";
+              message.style.borderColor = "#ff6b6b";
+              isValid = false;
+            } else {
+              messageError.style.display = "none";
+              message.style.borderColor = "rgba(255, 255, 255, 0.1)";
+            }
 
-            // Disable button temporarily
-            btn.disabled = true;
+            // If valid, submit to Web3Forms and show success animation
+            if (isValid) {
+              const form = this;
+              const btn = form.querySelector("button");
+              const originalContent = btn.innerHTML;
 
-            // Reset form after delay
-            setTimeout(() => {
-              this.reset();
-              btn.innerHTML = originalContent;
-              btn.style.backgroundColor = "";
-              btn.style.color = "";
-              btn.disabled = false;
+              // Update hidden fields with form data for better email format
+              if (document.getElementById("from_name")) {
+                document.getElementById("from_name").value = name.value.trim();
+              }
 
-              // Show thank you message
-              const formContainer = this;
-              formContainer.innerHTML = `
+              if (document.getElementById("email_subject")) {
+                document.getElementById(
+                  "email_subject"
+                ).value = `New Project Inquiry: ${
+                  project.options[project.selectedIndex].text
+                }`;
+              }
+
+              if (document.getElementById("project_details")) {
+                document.getElementById("project_details").value =
+                  `Project Type: ${
+                    project.options[project.selectedIndex].text
+                  }\n\n` + `Message: ${message.value.trim()}`;
+              }
+
+              // Change button to show loading state
+              btn.innerHTML =
+                '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i> Sending...';
+              btn.style.backgroundColor = "#0056b3";
+              btn.style.color = "white";
+              btn.disabled = true;
+
+              // Create FormData object
+              const formData = new FormData();
+
+              // Add access key
+              formData.append(
+                "access_key",
+                "77bc30d3-5283-4c83-b67f-9c608b85b874"
+              );
+
+              // Add all form fields explicitly
+              formData.append("name", name.value.trim());
+              formData.append("email", email.value.trim());
+              formData.append("project", project.value);
+              formData.append("message", message.value.trim());
+
+              // Add recipient email
+              formData.append("to_email", "thewebstudio.team@gmail.com");
+
+              // Add subject
+              formData.append(
+                "subject",
+                `New Project Inquiry: ${project.value}`
+              );
+
+              // For debugging - add more visible data
+              formData.append(
+                "project_type",
+                project.options[project.selectedIndex].text
+              );
+
+              // Send to Web3Forms
+              fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  if (data.success) {
+                    // Change button to show success message
+                    btn.innerHTML =
+                      '<i class="fas fa-check" style="margin-right: 10px;"></i> Message Sent!';
+                    btn.style.backgroundColor = "#4CAF50";
+                    btn.style.color = "white";
+
+                    // Disable button temporarily
+                    btn.disabled = true;
+
+                    // Reset form after delay
+                    setTimeout(() => {
+                      this.reset();
+                      btn.innerHTML = originalContent;
+                      btn.style.backgroundColor = "";
+                      btn.style.color = "";
+                      btn.disabled = false;
+
+                      // Show thank you message
+                      const formContainer = this;
+                      formContainer.innerHTML = `
         <div style="text-align: center; padding: 40px 20px;">
           <i class="fas fa-paper-plane" style="font-size: 3rem; margin-bottom: 20px; color: white;"></i>
           <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Thank You!</h3>
@@ -1226,17 +1490,53 @@
         </div>
       `;
 
-              // Add event listener to the new message button
-              document
-                .getElementById("newMessageBtn")
-                .addEventListener("click", function () {
-                  // Reload the form
-                  location.reload();
-                });
-            }, 1500);
-          }
-        });
+                      // Add event listener to the new message button
+                      document
+                        .getElementById("newMessageBtn")
+                        .addEventListener("click", function () {
+                          // Reload the form
+                          location.reload();
+                        });
+                    }, 1500);
+                  } else {
+                    // Show error state
+                    btn.innerHTML =
+                      '<i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> Error!';
+                    btn.style.backgroundColor = "#ff6b6b";
+                    alert(
+                      "There was an error sending your message: " +
+                        (data.message || "Please try again later.")
+                    );
 
+                    // Reset button after delay
+                    setTimeout(() => {
+                      btn.innerHTML = originalContent;
+                      btn.style.backgroundColor = "";
+                      btn.style.color = "";
+                      btn.disabled = false;
+                    }, 2000);
+                  }
+                })
+                .catch((error) => {
+                  console.error("Error:", error);
+                  btn.innerHTML =
+                    '<i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i> Error!';
+                  btn.style.backgroundColor = "#ff6b6b";
+                  alert(
+                    "There was an error sending your message. Please try again later."
+                  );
+
+                  // Reset button after delay
+                  setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.style.backgroundColor = "";
+                    btn.style.color = "";
+                    btn.disabled = false;
+                  }, 2000);
+                });
+            }
+          });
+      });
       // Input focus effects
       const formInputs = document.querySelectorAll(".floating-input, select");
       formInputs.forEach((input) => {
