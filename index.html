@@ -1179,18 +1179,48 @@
 
           <form
             id="contactForm"
-            action="https://api.web3forms.com/submit"
+            action="https://formsubmit.co/thewebstudio.team@gmail.com"
             method="POST"
           >
-            <!-- Hidden fields for Web3Forms -->
+            <!-- Hidden fields for formsubmit.co -->
             <input
               type="hidden"
-              name="access_key"
-              value="77bc30d3-5283-4c83-b67f-9c608b85b874"
+              name="_subject"
+              value="New Contact Form Submission"
             />
-            <input type="hidden" name="from_name" id="from_name" />
-            <input type="hidden" name="email_subject" id="email_subject" />
-            <input type="hidden" name="project_details" id="project_details" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
+            <!-- New fields for automated reply -->
+            <input
+              type="hidden"
+              name="_autoresponse"
+              value="Thank you for contacting THE WEB STUDIO"
+            />
+            <input
+              type="hidden"
+              name="_autoresponse_message"
+              value="Hello there,
+
+            Thank you for contacting The Web Studio! We're excited to hear from you.
+            
+            We've received your message and appreciate your interest in our services. A member of our team will personally review your project details and get back to you shortly.
+            
+            Our business hours are:
+            Monday - Friday: 9:00 AM - 5:00 PM SAST
+            Saturday - Sunday: Closed
+            
+            We look forward to the possibility of working together!
+            
+            Best regards,
+            The Web Studio Team"
+            />
+
+            <input
+              type="hidden"
+              name="_next"
+              value="https://thewebstudio.co.za/thankyou.html"
+            />
 
             <!-- Honeypot field to prevent spam -->
             <input type="checkbox" name="botcheck" style="display: none" />
@@ -1650,6 +1680,69 @@
         // Check once on load
         checkGallery();
       });
+
+      // Form validation
+      const contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+          let isValid = true;
+
+          // Name validation
+          const name = document.getElementById("name");
+          const nameError = document.getElementById("nameError");
+          if (name.value.trim() === "") {
+            nameError.style.display = "block";
+            name.style.borderColor = "#ff6b6b";
+            isValid = false;
+          } else {
+            nameError.style.display = "none";
+            name.style.borderColor = "rgba(255, 255, 255, 0.1)";
+          }
+
+          // Email validation
+          const email = document.getElementById("email");
+          const emailError = document.getElementById("emailError");
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email.value)) {
+            emailError.style.display = "block";
+            email.style.borderColor = "#ff6b6b";
+            isValid = false;
+          } else {
+            emailError.style.display = "none";
+            email.style.borderColor = "rgba(255, 255, 255, 0.1)";
+          }
+
+          // Project validation
+          const project = document.getElementById("project");
+          const projectError = document.getElementById("projectError");
+          if (project.value === "" || project.value === null) {
+            projectError.style.display = "block";
+            project.style.borderColor = "#ff6b6b";
+            isValid = false;
+          } else {
+            projectError.style.display = "none";
+            project.style.borderColor = "rgba(255, 255, 255, 0.1)";
+          }
+
+          // Message validation
+          const message = document.getElementById("message");
+          const messageError = document.getElementById("messageError");
+          if (message.value.trim() === "") {
+            messageError.style.display = "block";
+            message.style.borderColor = "#ff6b6b";
+            isValid = false;
+          } else {
+            messageError.style.display = "none";
+            message.style.borderColor = "rgba(255, 255, 255, 0.1)";
+          }
+
+          // If not valid, prevent form submission
+          if (!isValid) {
+            e.preventDefault();
+          }
+          // If valid, the form will submit to FormSubmit.co
+        });
+      }
     </script>
   </body>
 </html>

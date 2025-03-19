@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - THE WEB STUDIO</title>
+    <link rel="icon" type="image/svg+xml" href="radient-modern-favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --dark-gray: #202020;
+        --medium-gray: #505050;
+        --light-gray: #e0e0e0;
+        --off-white: #f8f8f8;
+        --accent-gray: #a0a0a0;
+        --header-height: 80px;
+        --transition: all 0.3s ease;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        background-color: var(--off-white);
+        color: var(--dark-gray);
+        line-height: 1.6;
+        font-family: "Roboto", sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .thank-you-container {
+        max-width: 600px;
+        text-align: center;
+        background-color: white;
+        padding: 50px 30px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .icon {
+        font-size: 4rem;
+        color: var(--dark-gray);
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        background-color: var(--dark-gray);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        margin-top: 15px;
+      }
+
+      .btn:hover {
+        background-color: var(--medium-gray);
+      }
+
+      .logo-svg {
+        height: 40px;
+        width: auto;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thank-you-container">
+      <svg
+        class="logo-svg"
+        viewBox="0 0 240 40"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- THE WEB </> STUDIO text -->
+        <text
+          x="120"
+          y="20"
+          font-family="'Roboto', sans-serif"
+          font-size="14"
+          font-weight="500"
+          fill="black"
+          text-anchor="middle"
+          letter-spacing="1"
+        >
+          THE WEB &lt;/&gt; STUDIO
+        </text>
+      </svg>
+
+      <i class="fas fa-paper-plane icon"></i>
+      <h1>Thank You!</h1>
+      <p>
+        Your message has been sent successfully. We appreciate you contacting
+        THE WEB STUDIO.
+      </p>
+      <p>
+        We'll review your project details and get back to you within 1-2
+        business days.
+      </p>
+      <a href="index.html" class="btn">Return to Home</a>
+    </div>
+  </body>
+</html>
