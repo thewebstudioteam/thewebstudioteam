@@ -1177,123 +1177,63 @@
             </div>
           </div>
 
+          <!-- Contact Form with FormSubmit.co -->
           <form
             id="contactForm"
             action="https://formsubmit.co/thewebstudio.team@gmail.com"
             method="POST"
           >
-            <!-- Hidden fields for formsubmit.co -->
+            <!-- FormSubmit configuration -->
             <input
               type="hidden"
               name="_subject"
-              value="New Contact Form Submission"
+              value="New Website Inquiry: The Web Studio"
             />
-            <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
-
-            <!-- New fields for automated reply -->
-            <input
-              type="hidden"
-              name="_autoresponse"
-              value="Thank you for contacting THE WEB STUDIO"
-            />
-            <input
-              type="hidden"
-              name="_autoresponse_message"
-              value="Hello there,
-
-            Thank you for contacting The Web Studio! We're excited to hear from you.
-            
-            We've received your message and appreciate your interest in our services. A member of our team will personally review your project details and get back to you shortly.
-            
-            Our business hours are:
-            Monday - Friday: 9:00 AM - 5:00 PM SAST
-            Saturday - Sunday: Closed
-            
-            We look forward to the possibility of working together!
-            
-            Best regards,
-            The Web Studio Team"
-            />
-
             <input
               type="hidden"
               name="_next"
-              value="https://thewebstudio.co.za/thankyou.html"
+              value="https://thewebstudioteam.co.za/thank-you.html"
             />
-
-            <!-- Honeypot field to prevent spam -->
-            <input type="checkbox" name="botcheck" style="display: none" />
+            <!-- Optional: Add honeypot to prevent spam -->
+            <input type="text" name="_honey" style="display: none" />
+            <!-- Optional: Disable captcha -->
+            <input type="hidden" name="_captcha" value="false" />
 
             <div class="form-group">
+              <input type="text" name="name" class="floating-input" required />
               <label for="name">Your Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="John Doe"
-                required
-              />
-              <div class="form-error" id="nameError">
-                Please enter your name
-              </div>
             </div>
 
             <div class="form-group">
-              <label for="email">Email Address</label>
               <input
                 type="email"
-                id="email"
                 name="email"
-                placeholder="john@example.com"
+                class="floating-input"
                 required
               />
-              <div class="form-error" id="emailError">
-                Please enter a valid email address
-              </div>
+              <label for="email">Your Email</label>
             </div>
 
             <div class="form-group">
-              <label for="project">Project Type</label>
-              <select
-                id="project"
-                name="project"
-                required
-                style="
-                  width: 100%;
-                  padding: 15px;
-                  border: 2px solid rgba(255, 255, 255, 0.1);
-                  background-color: rgba(255, 255, 255, 0.05);
-                  border-radius: 5px;
-                  color: white;
-                  font-family: 'Roboto', sans-serif;
-                "
-              >
-                <option value="" disabled selected>
-                  Select your project type
-                </option>
-                <option value="static">Static Website</option>
-                <option value="frontend">Frontend Web App</option>
-                <option value="uiux">UI/UX Design</option>
-                <option value="optimization">Frontend Optimization</option>
-                <option value="other">Other</option>
+              <select name="service" required>
+                <option value="" selected disabled>Select Service</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Branding">Branding</option>
+                <option value="SEO">SEO</option>
+                <option value="Other">Other</option>
               </select>
-              <div class="form-error" id="projectError">
-                Please select a project type
-              </div>
             </div>
 
             <div class="form-group">
-              <label for="message">Tell us about your project</label>
               <textarea
-                id="message"
                 name="message"
-                placeholder="Describe your project goals and requirements..."
+                class="floating-input"
+                rows="4"
                 required
               ></textarea>
-              <div class="form-error" id="messageError">
-                Please tell us about your project
-              </div>
+              <label for="message">Your Message</label>
             </div>
 
             <button type="submit">Send Message</button>
@@ -1348,70 +1288,20 @@
         document
           .getElementById("contactForm")
           .addEventListener("submit", function (e) {
-            let isValid = true;
+            const btn = this.querySelector("button");
+            btn.innerHTML =
+              '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i> Sending...';
+            btn.disabled = true; // Prevent multiple submissions
+            btn.style.backgroundColor = "#0056b3";
+            btn.style.color = "white";
 
-            // Name validation
-            const name = document.getElementById("name");
-            const nameError = document.getElementById("nameError");
-            if (name.value.trim() === "") {
-              e.preventDefault(); // Only prevent submission if validation fails
-              nameError.style.display = "block";
-              name.style.borderColor = "#ff6b6b";
-              isValid = false;
-            } else {
-              nameError.style.display = "none";
-              name.style.borderColor = "rgba(255, 255, 255, 0.1)";
-            }
-
-            // Email validation
-            const email = document.getElementById("email");
-            const emailError = document.getElementById("emailError");
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email.value)) {
-              e.preventDefault();
-              emailError.style.display = "block";
-              email.style.borderColor = "#ff6b6b";
-              isValid = false;
-            } else {
-              emailError.style.display = "none";
-              email.style.borderColor = "rgba(255, 255, 255, 0.1)";
-            }
-
-            // Project validation
-            const project = document.getElementById("project");
-            const projectError = document.getElementById("projectError");
-            if (project.value === "" || project.value === null) {
-              e.preventDefault();
-              projectError.style.display = "block";
-              project.style.borderColor = "#ff6b6b";
-              isValid = false;
-            } else {
-              projectError.style.display = "none";
-              project.style.borderColor = "rgba(255, 255, 255, 0.1)";
-            }
-
-            // Message validation
-            const message = document.getElementById("message");
-            const messageError = document.getElementById("messageError");
-            if (message.value.trim() === "") {
-              e.preventDefault();
-              messageError.style.display = "block";
-              message.style.borderColor = "#ff6b6b";
-              isValid = false;
-            } else {
-              messageError.style.display = "none";
-              message.style.borderColor = "rgba(255, 255, 255, 0.1)";
-            }
-
-            // If form is valid, show loading state then submit normally
-            if (isValid) {
-              const btn = this.querySelector("button");
-              btn.innerHTML =
-                '<i class="fas fa-spinner fa-spin" style="margin-right: 10px;"></i> Sending...';
-              btn.style.backgroundColor = "#0056b3";
-              btn.style.color = "white";
-              // Let the form submit to FormSubmit.co
-            }
+            // Reset button after 5 seconds (in case of network delay)
+            setTimeout(() => {
+              btn.innerHTML = "Send Message";
+              btn.disabled = false;
+              btn.style.backgroundColor = "white";
+              btn.style.color = "#202020";
+            }, 5000);
           });
 
         // Input focus effects
